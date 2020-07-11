@@ -1,2 +1,2 @@
 ## dx9
-[Download]("https://ranzi.me/dx9.zip")
+[Download]("dx9.zip")
