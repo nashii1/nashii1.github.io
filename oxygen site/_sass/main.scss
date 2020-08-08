@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+// Customization
+
+// You can easily customize Bulma with your own variables.
+// Just uncomment the following block to see the result.
+
+/*
+// 1. Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+// 2. Set your own initial variables
+// Update the blue shade, used for links
+$blue: #06bcef;
+// Add pink and its invert
+$pink: #ff8080;
+$pink-invert: #fff;
+// Update the sans-serif font family
+$family-sans-serif: "Helvetica", "Arial", sans-serif;
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $pink;
+$primary-invert: $pink-invert;
+
+// 4. Import the rest of Bulma
+*/
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Ubuntu:wght@300&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+$family-sans-serif: 'Ubuntu', sans-serif;
+$dark: rgb(22, 22, 22);
+
+:root {
+    --bgcl: #222;
+    --bgcd: #fff;
+}
+
+h1.page-header {
+    margin: 0;
+    padding: 0;
+}
+
+.intro {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    background-color: #101010;
+    color: #fff;
+    h1 {
+        font-size:30px;
+        line-height:30px;
+        margin: 0px;
+        padding: 0px;
+        color: #fff;
+    }
+    p {
+        font-size:15px;
+        line-height:15px;
+        margin: 0px;
+        padding: 0px;
+        color: #fff;
+    }
+}
+
+body{
+    width: 100%;
+    background-color: var(--bgcl);
+    color: var(--bgcd);
+}
+
+.textasd {
+    background-color: var(--bgcl);
+    color: var(--bgcd);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.125;
+    padding-bottom: 25px;
+}
+
+//@import "../node_modules/bulma/bulma";
+
+::-webkit-scrollbar {
+  display: none;
+}
