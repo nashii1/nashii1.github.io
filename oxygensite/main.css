@@ -1,0 +1,50 @@
+:root {
+  --bgcl: #222;
+  --bgcd: #fff;
+}
+
+h1.page-header {
+  margin: 0;
+  padding: 0;
+}
+
+.intro {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  background-color: #101010;
+  color: #fff;
+}
+.intro h1 {
+  font-size: 30px;
+  line-height: 30px;
+  margin: 0px;
+  padding: 0px;
+  color: #fff;
+}
+.intro p {
+  font-size: 15px;
+  line-height: 15px;
+  margin: 0px;
+  padding: 0px;
+  color: #fff;
+}
+
+body {
+  width: 100%;
+  background-color: var(--bgcl);
+  color: var(--bgcd);
+}
+
+.textasd {
+  background-color: var(--bgcl);
+  color: var(--bgcd);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.125;
+  padding-bottom: 25px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
