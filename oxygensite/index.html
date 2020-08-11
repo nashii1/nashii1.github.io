@@ -9,19 +9,62 @@
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <script>
+      function GetDarker(col) {
+        var c3 = col.charCodeAt(3) - 1;
+        var c2 = col.charCodeAt(2);
+        var c1 = col.charCodeAt(1);
+
+        console.log(String.fromCharCode(c1).toString().concat(" ".concat(c1)))
+        console.log(String.fromCharCode(c2).toString().concat(" ".concat(c2)))
+        console.log(String.fromCharCode(c3).toString().concat(" ".concat(c3)))
+
+        if(col == "#000")
+        {
+          return "#000";
+        }
+        if(c3 == 47)
+        {
+          c2 -= 1;
+          c3 = "f".charCodeAt(0);
+        }
+        if(c2 == 47)
+        {
+          c1 -= 1;
+          c2 = "f".charCodeAt(0);
+        }
+        if(c3 == 96)
+        {
+          c3 = 57
+        }
+        if(c2 == 96)
+        {
+          c2 = 57
+        }
+        if(c1 == 96)
+        {
+          c1 = 57
+        }
+        return "#".concat(String.fromCharCode(c1).toString().concat(String.fromCharCode(c2).toString().concat(String.fromCharCode(c3))))
+      }
       function setDMode()
       {
-        console.log("called");
         var mode = getComputedStyle(document.documentElement).getPropertyValue('--bgcl');
+        console.log(mode);
         if(mode == "#fff")
         {
           document.documentElement.style.setProperty('--bgcl', '#222')
           document.documentElement.style.setProperty('--bgcd', '#fff')
+          document.documentElement.style.setProperty('--bgcl2', '#333')
+          document.documentElement.style.setProperty('--bgcd2', '#eee')
         }
-        else
-        {
+        else {
+          setInterval(() => {
+            
+          })
           document.documentElement.style.setProperty('--bgcl', '#fff')
           document.documentElement.style.setProperty('--bgcd', '#222')
+          document.documentElement.style.setProperty('--bgcd2', '#333')
+          document.documentElement.style.setProperty('--bgcl2', '#eee')
         }
       }
     </script>
@@ -101,34 +144,34 @@
             <div class="tile is-vertical is-8">
               <div class="tile">
                 <div class="tile is-parent is-vertical">
-                  <article class="tile is-child notification is-dark">
-                    <p class="title">It's fast</p>
-                    <p class="subtitle">Fast execution, attach times and loading times.</p>
+                  <article class="tile is-child notification is-dark" style="background-color: var(--bgcl2);">
+                    <p class="title" style="color: var(--bgcd2);">It's fast</p>
+                    <p class="subtitle" style="color: var(--bgcd2);">Fast execution, attach times and loading times.</p>
                   </article>
-                  <article class="tile is-child notification is-dark">
-                    <p class="title">It's free</p>
-                    <p class="subtitle">It's the cheapest thing you could find, free.</p>
+                  <article class="tile is-child notification is-dark" style="background-color: var(--bgcl2);">
+                    <p class="title" style="color: var(--bgcd2);">It's free</p>
+                    <p class="subtitle" style="color: var(--bgcd2);">It's the cheapest thing you could find, free.</p>
                   </article>
                 </div>
                 <div class="tile is-parent">
-                  <article class="tile is-child notification is-dark">
-                    <p class="title">Frequent updates</p>
-                    <p class="subtitle">Oxygen is updated after a patch every update. Oxygen also is recieving new features frequently.</p>
+                  <article class="tile is-child notification is-dark" style="background-color: var(--bgcl2);">
+                    <p class="title" style="color: var(--bgcd2);">Frequent updates</p>
+                    <p class="subtitle" style="color: var(--bgcd2);">Oxygen is updated after a patch every update. Oxygen also is recieving new features frequently.</p>
                   </article>
                 </div>
               </div>
               <div class="tile is-parent">
-                <article class="tile is-child notification is-dark">
-                  <p class="title">Feature rich</p>
-                  <p class="subtitle">Oxygen has a feature rich custom environment.</p>
+                <article class="tile is-child notification is-dark" style="background-color: var(--bgcl2);">
+                  <p class="title" style="color: var(--bgcd2);">Feature rich</p>
+                  <p class="subtitle" style="color: var(--bgcd2);">Oxygen has a feature rich custom environment.</p>
                 </article>
               </div>
             </div>
             <div class="tile is-parent">
-              <article class="tile is-child notification is-dark">
+              <article class="tile is-child notification is-dark" style="background-color: var(--bgcl2);">
                 <div class="content">
-                  <p class="title">It's beautiful</p>
-                  <p class="subtitle">Oxygen's UI is good looking, it has multiple features, is easy to use and understand</p>
+                  <p class="title" style="color: var(--bgcd2);">It's beautiful</p>
+                  <p class="subtitle" style="color: var(--bgcd2);">Oxygen's UI is good looking, it has multiple features, is easy to use and understand</p>
                 </div>
               </article>
             </div>
@@ -139,7 +182,7 @@
           </h1>
 
           <article class="message is-primary">
-            <div class="message-body" style="background-color: #222; color: #fff;">
+            <div class="message-body" style="background-color: var(--bgcl); color: var(--bgcd); border: 2px solid var(--bgcd);">
               You can download Oxygen by pressing the download button at the top of the navbar. By pressing 'Download', you agree to Oxygen's terms of service. 
             </div>
           </article>
@@ -155,11 +198,11 @@
                     <img src="./Assets/PFPs/IDev.png" style="object-fit: cover; object-position: 50% 100%;" alt="Placeholder image">
                   </figure>
                 </div>
-                <div class="card-content" style="background-color: #111;">
+                <div class="card-content" style="background-color: var(--bgcl);">
                   <div class="media">
                     <div class="media-content">
-                      <p class="title is-5" style="color: #fff;">iDev</p>
-                      <p class="subtitle is-6" style="color: #fff;">Module Developer</p>
+                      <p class="title is-5" style="color: var(--bgcd);">iDev</p>
+                      <p class="subtitle is-6" style="color: var(--bgcd);">Module Developer</p>
                     </div>
                   </div>
                 </div>
@@ -173,11 +216,11 @@
                     <img src="./Assets/PFPs/IceBear.png" style="overflow: hidden; object-fit: contain; filter: drop-shadow(-14.5px 0 0 #fff) drop-shadow(14.5px 0 0 #fff);" alt="Placeholder image">
                   </figure>
                 </div>
-                <div class="card-content" style="background-color: #111;">
+                <div class="card-content" style="background-color: var(--bgcl);">
                   <div class="media">
                     <div class="media-content">
-                      <p class="title is-5" style="color: #fff;">Ice Bear</p>
-                      <p class="subtitle is-6" style="color: #fff;">Dev Support</p>
+                      <p class="title is-5" style="color: var(--bgcd);">Ice Bear</p>
+                      <p class="subtitle is-6" style="color: var(--bgcd);">Dev Support</p>
                     </div>
                   </div>
                 </div>
@@ -185,17 +228,17 @@
             </div>
 
             <div class="column is-one-third">
-              <div class="card" style="overflow: hidden; ">
+              <div class="card" style="overflow: hidden;">
                 <div class="card-image" style="overflow: hidden; object-fit: contain; left:1px; filter: drop-shadow(-14.5px 0 0 #000) drop-shadow(14.5px 0 0 #000);">
                   <figure class="image is-4by3" style="overflow: hidden; object-fit: contain; filter: drop-shadow(-14.5px 0 0 #000) drop-shadow(14.5px 0 0 #000);">
                     <img src="./Assets/PFPs/Kowalski.png" style="overflow: hidden; object-fit: contain; filter: drop-shadow(-14.5px 0 0 #000) drop-shadow(14.5px 0 0 #000);" alt="Placeholder image">
                   </figure>
                 </div>
-                <div class="card-content" style="background-color: #111;">
+                <div class="card-content" style="background-color: var(--bgcl);">
                   <div class="media">
                     <div class="media-content">
-                      <p class="title is-5" style="color: #fff;">Kowalski</p>
-                      <p class="subtitle is-6" style="color: #fff;">Dev Support</p>
+                      <p class="title is-5" style="color: var(--bgcd);">Kowalski</p>
+                      <p class="subtitle is-6" style="color: var(--bgcd);">Dev Support</p>
                     </div>
                   </div>
                 </div>

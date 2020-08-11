@@ -1,6 +1,8 @@
 :root {
   --bgcl: #222;
+  --bgcl2: #333;
   --bgcd: #fff;
+  --bgcd2: #eee;
 }
 
 h1.page-header {
